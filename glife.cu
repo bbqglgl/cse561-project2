@@ -49,7 +49,9 @@ __global__ void kernel(int *grid, int *temp, int rows, int cols)
         num = getNeighbors(grid, rows, cols, index / cols, index % cols);
         //temp[index] = liveTable[grid[index]][num];
         
-        if (num == 3 || (grid[index] && num == 2))
+
+        //!! num always added center grid's num!!
+        if (num == 3 || (grid[index] && num == 4))
             temp[index] = 1;
         else
             temp[index] = 0;
