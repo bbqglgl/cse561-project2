@@ -7,7 +7,7 @@ CXXFLAGS = -Wall -std=c++0x
 TARGET = glife 
 OBJ = glife.o
 SRC = glife.cpp
-LIBS = -pthread -L/usr/local/cuda/lib64 -lcuda -lcudart
+LIBS = -pthread -L/usr/local/cuda/lib64/stubs -L/usr/local/cuda/lib64 -lcuda -lcudart
 .PHONY : $(TARGET) $(OBJ)
 
 all : $(TARGET)

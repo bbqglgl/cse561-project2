@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <unistd.h>
+#include <cstring>
 
 #define LIVE 1
 #define DEAD 0
@@ -23,6 +24,7 @@ public:
 	
 	void dead(int rows, int cols) { m_Temp[rows][cols] = 0; }
 	void live(int rows, int cols) { m_Temp[rows][cols] = 1; }
+	int* getTemp(int rows, int cols) { return &m_Temp[rows][cols]; }
 
 	int decGen() { return m_Generations--; }
 	void setGen(int n) { m_Generations = n; }
